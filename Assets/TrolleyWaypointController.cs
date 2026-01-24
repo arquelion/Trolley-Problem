@@ -31,7 +31,6 @@ public class TrolleyWaypointController : MonoBehaviour
     public float impactForce = 15f;
 
     // Private state variables (declared only, initialized in Start)
-    private bool isSideTrackSelected;
     private Transform[] selectedPath;
     private Queue<Transform> currentPathQueue;
     private Transform currentTargetPoint;
@@ -41,7 +40,6 @@ public class TrolleyWaypointController : MonoBehaviour
     {
         // === Safe Initialization ===
         // Initialize variables here to ensure they run on the Main Thread
-        isSideTrackSelected = false; // Default to straight track
         isOnCommonPath = true;
         currentPathQueue = new Queue<Transform>();
         nextDir = TrolleyDirection.Forward; // TODO: Change to forward or random depending on which scenario is chosen in the options
@@ -95,6 +93,12 @@ public class TrolleyWaypointController : MonoBehaviour
         {
             isOnCommonPath = false; // We are now leaving the common path
 
+            if (nextDir == TrolleyDirection.Random)
+            {
+                // Random.Range includes lower but excludes upper when used with ints
+                nextDir = (TrolleyDirection)Random.Range(0, 2);
+            }
+
             // Select the next path
             switch (nextDir)
             {
@@ -103,9 +107,6 @@ public class TrolleyWaypointController : MonoBehaviour
                     break;
                 case TrolleyDirection.Left:
                     selectedPath = leftPath;
-                    break;
-                case TrolleyDirection.Random:
-                    // TODO: Random direction scenario
                     break;
                 default:
                     // Should not get here

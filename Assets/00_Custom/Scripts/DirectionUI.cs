@@ -23,6 +23,11 @@ public class DirectionUI : MonoBehaviour
                 random.SetActive(false);
                 forwardArrow.SetActive(false);
                 break;
+            case TrolleyDirection.Random:
+                leftArrow.SetActive(false);
+                random.SetActive(true);
+                forwardArrow.SetActive(false);
+                break;
             default:
                 // should not get here
                 Debug.Log("Invalid direction to display");
