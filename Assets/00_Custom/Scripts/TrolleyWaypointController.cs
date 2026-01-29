@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 public enum TrolleyDirection
 {
-    Forward,
+    Right,
     Left,
     Random,
 }
 
 public class TrolleyWaypointController : MonoBehaviour
 {
-    [HideInInspector] public TrolleyDirection nextDir;
+    [HideInInspector] private TrolleyDirection nextDir;
 
     [Header("Path Settings")]
     // Common path: from start to the junction (include the junction point)
@@ -45,7 +45,7 @@ public class TrolleyWaypointController : MonoBehaviour
 
         isOnCommonPath = true;
         currentPathQueue = new Queue<Transform>();
-       // nextDir = TrolleyDirection.Forward; // TODO: Change to forward or random depending on which scenario is chosen in the options
+       // nextDir = TrolleyDirection.Right; // TODO: Change to forward or random depending on which scenario is chosen in the options
 
         // Load the common path into the queue at the start
         if (commonPath != null && commonPath.Length > 0)
@@ -105,7 +105,7 @@ public class TrolleyWaypointController : MonoBehaviour
             // Select the next path
             switch (nextDir)
             {
-                case TrolleyDirection.Forward:
+                case TrolleyDirection.Right:
                     selectedPath = forwardPath;
                     break;
                 case TrolleyDirection.Left:
@@ -184,7 +184,7 @@ public class TrolleyWaypointController : MonoBehaviour
     {
         if (isOnCommonPath)
         {
-            nextDir = TrolleyDirection.Forward;
+            nextDir = TrolleyDirection.Right;
             Debug.Log("Track switched. Forward track selected");
         }
     }

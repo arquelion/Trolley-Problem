@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 423746686}
   - component: {fileID: 423746685}
   m_Layer: 5
-  m_Name: Forward Arrow
+  m_Name: Right Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,17 +1030,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423746683}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1606391089}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: -30}
-  m_SizeDelta: {x: 132.7009, y: 113.9966}
+  m_AnchoredPosition: {x: -9.2098, y: -31.441}
+  m_SizeDelta: {x: 157.12, y: 111.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &423746685
 MonoBehaviour:
@@ -2319,7 +2319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -135, y: -237.12}
+  m_AnchoredPosition: {x: -135, y: -237}
   m_SizeDelta: {x: 157.12, y: 111.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1100951201
@@ -2366,8 +2366,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1132748320}
-        m_TargetAssemblyTypeName: TrolleyWaypointController, Assembly-CSharp
+      - m_Target: {fileID: 1678876779}
+        m_TargetAssemblyTypeName: SplineScriptTest, Assembly-CSharp
         m_MethodName: OnClickLeft
         m_Mode: 1
         m_Arguments:
@@ -2840,7 +2840,7 @@ GameObject:
   - component: {fileID: 1482083517}
   - component: {fileID: 1482083516}
   m_Layer: 5
-  m_Name: Forward Button
+  m_Name: Right Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2853,16 +2853,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482083514}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2145253306}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 231, y: -210}
+  m_AnchoredPosition: {x: 231, y: -237}
   m_SizeDelta: {x: 157.12, y: 111.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482083516
@@ -2909,9 +2909,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1132748320}
-        m_TargetAssemblyTypeName: TrolleyWaypointController, Assembly-CSharp
-        m_MethodName: OnClickForward
+      - m_Target: {fileID: 1678876779}
+        m_TargetAssemblyTypeName: SplineScriptTest, Assembly-CSharp
+        m_MethodName: OnClickRight
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3051,9 +3051,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee0874117c39e742bcabedf5f348d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DirectionUI
-  trolley: {fileID: 1132748320}
+  trolley: {fileID: 1678876779}
   leftArrow: {fileID: 1998381301}
-  forwardArrow: {fileID: 423746683}
+  rightArrow: {fileID: 423746683}
   random: {fileID: 1620298898}
 --- !u!1 &1620298898
 GameObject:
@@ -3344,9 +3344,7 @@ MonoBehaviour:
   Trunk: {fileID: 304332733}
   Left: {fileID: 2017828363}
   Right: {fileID: 940225555}
-  junctionTag: SplineTrigger
-  mergeTag: MergeTrigger
-  goLeft: 1
+  nextDir: 0
 --- !u!54 &1678876780
 Rigidbody:
   m_ObjectHideFlags: 0
