@@ -5,7 +5,7 @@ public class DirectionUI : MonoBehaviour
 {
     [SerializeField] private TrolleyWaypointController trolley;
     [SerializeField] private GameObject leftArrow;
-    [SerializeField] private GameObject forwardArrow;
+    [SerializeField] private GameObject rightArrow;
     [SerializeField] private GameObject random;
 
     // Update is called once per frame
@@ -13,20 +13,20 @@ public class DirectionUI : MonoBehaviour
     {
         switch (trolley.nextDir)
         {
-            case TrolleyDirection.Forward:
+            case TrolleyDirection.Right:
                 leftArrow.SetActive(false);
                 random.SetActive(false);
-                forwardArrow.SetActive(true);
+                rightArrow.SetActive(true);
                 break;
             case TrolleyDirection.Left:
                 leftArrow.SetActive(true);
                 random.SetActive(false);
-                forwardArrow.SetActive(false);
+                rightArrow.SetActive(false);
                 break;
             case TrolleyDirection.Random:
                 leftArrow.SetActive(false);
                 random.SetActive(true);
-                forwardArrow.SetActive(false);
+                rightArrow.SetActive(false);
                 break;
             default:
                 // should not get here
