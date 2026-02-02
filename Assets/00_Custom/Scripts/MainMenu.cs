@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGameRegular()
     {
-        GameState.nextDir = TrolleyDirection.Right;
+        GameState.nextDir = TrolleyDirection.Left;
         SceneManager.LoadScene(firstLevelSceneName);
     }
 

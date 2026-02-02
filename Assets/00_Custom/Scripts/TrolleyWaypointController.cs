@@ -132,36 +132,4 @@ public class TrolleyWaypointController : MonoBehaviour
             Debug.Log("Track switched. Right track selected");
         }
     }
-
-    /*[Header("Physics Settings")]
-    // Impact force applied to the victim (higher value = flies further)
-    public float impactForce = 15f;
-
-    // === Physics Collision Logic ===
-    void OnTriggerEnter(Collider other)
-    {
-        // Check if the object has the tag "People"
-        if (other.CompareTag("People"))
-        {
-            // Get the Rigidbody component from the victim
-            Rigidbody personRb = other.GetComponent<Rigidbody>();
-
-            if (personRb != null)
-            {
-                Debug.Log("Impact with victim: " + other.gameObject.name);
-
-                // Calculate impact direction: forward + slightly upward
-                Vector3 flyDirection = (transform.forward + Vector3.up).normalized;
-
-                // Apply impulse force to send them flying
-                personRb.AddForce(flyDirection * impactForce, ForceMode.Impulse);
-
-                // Apply random torque (rotation) for a chaotic effect
-                personRb.AddTorque(Random.insideUnitSphere * impactForce * 2f, ForceMode.Impulse);
-
-                // Remove the tag so we don't trigger the collision logic multiple times
-                other.tag = "Untagged";
-            }
-        }
-    }*/
 }
